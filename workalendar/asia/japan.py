@@ -60,6 +60,16 @@ class Japan(Calendar):
                 (date(year, 8, 8), "Mountain Day"),
                 (date(year, 8, 9), "Mountain Day Observed"),
             ])
+        if year == 2024:
+            days.extend([
+                (date(year, 8, 12), "Mountain Day Observed"),
+                (date(year, 9, 23), "Autumnal Equinox Day Observed"),
+                (date(year, 11, 4), "Culture Day Observed"),
+            ])
+            # Mountain Day is 8/12 this year for some reason
+            # The next year that will be different is 2028?
+            days.remove((date(year, 8, 11), "Mountain Day"))
+
         return days
 
     def get_variable_days(self, year):
